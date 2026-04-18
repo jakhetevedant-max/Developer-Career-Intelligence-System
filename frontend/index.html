@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevCareer Intelligence - Developer Career Audit</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <rect width="32" height="32" rx="8" fill="url(#logo-gradient)"/>
+                    <path d="M10 8L16 16L10 24" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M18 8L24 16L18 24" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+                    <defs>
+                        <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32">
+                            <stop offset="0%" stop-color="#6366f1"/>
+                            <stop offset="100%" stop-color="#a855f7"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span>DevCareer<span class="accent">Intelligence</span></span>
+            </div>
+            <nav class="nav-links">
+                <a href="#audit-form" class="nav-link active">Audit</a>
+                <a href="#dashboard" class="nav-link" style="display:none" id="nav-dashboard">Dashboard</a>
+                <a href="#about" class="nav-link">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero / Audit Form Section -->
+    <section class="hero" id="audit-form">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Brutally Honest</span><br>
+                    Developer Career Audit
+                </h1>
+                <p class="hero-subtitle">
+                    Get a 360-degree analysis of your demonstrated skills vs. claimed experience. 
+                    No sugarcoating. Just actionable intelligence.
+                </p>
+                
+                <div class="audit-form-container">
+                    <form class="audit-form" id="audit-form-element">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="github-username">GitHub Username *</label>
+                                <input type="text" id="github-username" placeholder="e.g., octocat" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="portfolio-url">Portfolio / Live App URL</label>
+                                <input type="url" id="portfolio-url" placeholder="https://your-site.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="claimed-role">Claimed Role</label>
+                                <input type="text" id="claimed-role" placeholder="e.g., Senior Full-Stack Developer">
+                            </div>
+                            <div class="form-group">
+                                <label for="claimed-years">Claimed Years of Experience</label>
+                                <input type="number" id="claimed-years" placeholder="e.g., 5" min="0" max="50">
+                            </div>
+                            <div class="form-group">
+                                <label for="target-role">Target Role</label>
+                                <input type="text" id="target-role" placeholder="e.g., Senior Frontend Developer">
+                            </div>
+                            <div class="form-group">
+                                <label for="location">Preferred Location</label>
+                                <select id="location">
+                                    <option value="Remote">Remote</option>
+                                    <option value="US">United States</option>
+                                    <option value="Europe">Europe</option>
+                                    <option value="Asia">Asia</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="claimed-skills">Claimed Skills (comma-separated)</label>
+                            <input type="text" id="claimed-skills" placeholder="React, Node.js, TypeScript, Python, AWS...">
+                        </div>
+                        <button type="submit" class="btn-audit" id="btn-audit">
+                            <span class="btn-text">Start Full Audit</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="trust-badges">
+                    <div class="badge">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M8 1L2 4V7.5C2 11.5 4.7 15.1 8 16C11.3 15.1 14 11.5 14 7.5V4L8 1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                            <path d="M5.5 8L7 9.5L10.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Anonymous & Secure</span>
+                    </div>
+                    <div class="badge">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M8 4V8L10.5 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span>Under 2 Minutes</span>
+                    </div>
+                    <div class="badge">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M2 8L6 12L14 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>File-Level Precision</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loading Section -->
+    <section class="loading-section" id="loading-section" style="display:none">
+        <div class="container">
+            <div class="loading-content">
+                <div class="spinner"></div>
+                <h2 class="loading-title">Analyzing Your Profile</h2>
+                <p class="loading-subtitle">This takes about 90 seconds. We're being thorough.</p>
+                
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <div class="progress-steps">
+                        <div class="step active" data-step="1">
+                            <div class="step-dot"></div>
+                            <span>GitHub Profile</span>
+                        </div>
+                        <div class="step" data-step="2">
+                            <div class="step-dot"></div>
+                            <span>Code Quality</span>
+                        </div>
+                        <div class="step" data-step="3">
+                            <div class="step-dot"></div>
+                            <span>Live App Audit</span>
+                        </div>
+                        <div class="step" data-step="4">
+                            <div class="step-dot"></div>
+                            <span>Security Scan</span>
+                        </div>
+                        <div class="step" data-step="5">
+                            <div class="step-dot"></div>
+                            <span>Market Analysis</span>
+                        </div>
+                        <div class="step" data-step="6">
+                            <div class="step-dot"></div>
+                            <span>Final Report</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="loading-facts" id="loading-facts">
+                    <p>Fetching repository data from GitHub API...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard" id="dashboard" style="display:none">
+        <div class="container">
+            <!-- Dashboard Header -->
+            <div class="dashboard-header">
+                <div class="dashboard-title">
+                    <h2>Audit Results</h2>
+                    <span class="audit-id" id="audit-id-display"></span>
+                </div>
+                <div class="dashboard-actions">
+                    <button class="btn-secondary" onclick="downloadReport()">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M8 2V10M8 10L5 7M8 10L11 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3 12H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        Download Report
+                    </button>
+                    <button class="btn-secondary" onclick="newAudit()">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M8 3V13M3 8H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        New Audit
+                    </button>
+                </div>
+            </div>
+
+            <!-- Summary Cards -->
+            <div class="summary-cards">
+                <!-- Overall Score Card -->
+                <div class="summary-card main-card">
+                    <div class="score-circle" id="overall-score-circle">
+                        <svg viewBox="0 0 120 120">
+                            <circle class="score-bg" cx="60" cy="60" r="54"/>
+                            <circle class="score-progress" id="score-progress-circle" cx="60" cy="60" r="54"/>
+                        </svg>
+                        <div class="score-value">
+                            <span class="score-number" id="overall-score-number">0</span>
+                            <span class="score-label">/ 100</span>
+                        </div>
+                    </div>
+                    <div class="score-info">
+                        <h3>Overall Score</h3>
+                        <div class="level-badge" id="demonstrated-level">Analyzing...</div>
+                        <p class="level-comparison" id="level-comparison"></p>
+                    </div>
+                </div>
+
+                <!-- Critical Issues Card -->
+                <div class="summary-card issue-card">
+                    <div class="card-icon critical">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 9V13M12 17H12.01M10.29 3.86L1.82 18C1.645 18.302 1.553 18.645 1.553 18.994C1.553 19.344 1.645 19.687 1.82 19.989C1.995 20.291 2.247 20.54 2.548 20.71C2.85 20.879 3.19 20.963 3.54 20.954H20.46C20.81 20.963 21.15 20.879 21.452 20.71C21.753 20.54 22.005 20.291 22.18 19.989C22.355 19.687 22.447 19.344 22.447 18.994C22.447 18.645 22.355 18.302 22.18 18L13.71 3.86C13.532 3.566 13.281 3.323 12.982 3.157C12.683 2.991 12.345 2.907 12.002 2.914C11.659 2.922 11.324 3.021 11.032 3.199C10.74 3.378 10.501 3.63 10.34 3.93" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-number" id="critical-issues-count">0</span>
+                        <span class="card-label">Critical Issues</span>
+                        <span class="card-sublabel" id="warnings-count">0 warnings</span>
+                    </div>
+                </div>
+
+                <!-- Market Position Card -->
+                <div class="summary-card market-card">
+                    <div class="card-icon market">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M18 20V10M12 20V4M6 20V14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-number" id="market-percentile">0th</span>
+                        <span class="card-label">Market Percentile</span>
+                        <span class="card-sublabel" id="interview-rate">0% interview rate</span>
+                    </div>
+                </div>
+
+                <!-- Skill Level Card -->
+                <div class="summary-card skill-card">
+                    <div class="card-icon skill">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-number" id="demonstrated-level-short">-</span>
+                        <span class="card-label">Demonstrated Level</span>
+                        <span class="card-sublabel" id="level-verdict">Analyzing</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="tab-nav">
+                <button class="tab-btn active" data-tab="overview">Overview</button>
+                <button class="tab-btn" data-tab="code-analysis">Code Analysis</button>
+                <button class="tab-btn" data-tab="live-audit">Live App Audit</button>
+                <button class="tab-btn" data-tab="security">Security Scan</button>
+                <button class="tab-btn" data-tab="market">Job Market Fit</button>
+                <button class="tab-btn" data-tab="roadmap">Learning Roadmap</button>
+                <button class="tab-btn" data-tab="resume">Resume Rewriter</button>
+            </div>
+
+            <!-- Tab Content: Overview -->
+            <div class="tab-content active" id="tab-overview">
+                <div class="overview-grid">
+                    <div class="panel">
+                        <h3 class="panel-title">Dimension Scores (1-10)</h3>
+                        <div class="dimension-bars" id="dimension-bars">
+                            <!-- Filled by JS -->
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <h3 class="panel-title">Top Action Items</h3>
+                        <div class="action-items" id="action-items">
+                            <!-- Filled by JS -->
+                        </div>
+                    </div>
+                </div>
+                <div class="panel full-panel">
+                    <h3 class="panel-title">Tech Stack Analysis</h3>
+                    <div class="tech-stack-display" id="tech-stack-display">
+                        <!-- Filled by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Code Analysis -->
+            <div class="tab-content" id="tab-code-analysis">
+                <div class="code-analysis-container" id="code-analysis-container">
+                    <!-- Filled by JS -->
+                </div>
+            </div>
+
+            <!-- Tab Content: Live App Audit -->
+            <div class="tab-content" id="tab-live-audit">
+                <div class="live-audit-container" id="live-audit-container">
+                    <!-- Filled by JS -->
+                </div>
+            </div>
+
+            <!-- Tab Content: Security -->
+            <div class="tab-content" id="tab-security">
+                <div class="security-container" id="security-container">
+                    <!-- Filled by JS -->
+                </div>
+            </div>
+
+            <!-- Tab Content: Market Fit -->
+            <div class="tab-content" id="tab-market">
+                <div class="market-container" id="market-container">
+                    <!-- Filled by JS -->
+                </div>
+            </div>
+
+            <!-- Tab Content: Roadmap -->
+            <div class="tab-content" id="tab-roadmap">
+                <div class="roadmap-container" id="roadmap-container">
+                    <!-- Filled by JS -->
+                </div>
+            </div>
+
+            <!-- Tab Content: Resume -->
+            <div class="tab-content" id="tab-resume">
+                <div class="resume-container" id="resume-container">
+                    <!-- Filled by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span>DevCareer<span class="accent">Intelligence</span></span>
+                    <p>Brutally honest developer career audits.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Privacy</a>
+                    <a href="#" class="footer-link">Terms</a>
+                    <a href="#" class="footer-link">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Built for developers who want the truth.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
